@@ -19,7 +19,7 @@ export default function Navbar() {
                 
                 </div>
             </Link>
-            {pageList.map((item, index) => {
+            {pageList.map((item) => {
                 return <li key={item.key} className = "list-none flex flex-row align-middle items-center justify-center"><Link href = {"/"+item.name} className= "flex flex-row align-middle items-center justify-center">
                 <div className = "transition ease-in-out flex flex-row">
                     <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2" : "opacity-70 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60]"}>{item.displayName}</p>
@@ -30,7 +30,7 @@ export default function Navbar() {
             
         </div>
         <div className = "flex flew-row gap-1">
-            {socialList.map((item, index) => {
+            {socialList.map((item) => {
                 return <li key = {item.key} className = "list-none">
                     <a href = {item.url}>
                         <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
