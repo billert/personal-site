@@ -8,7 +8,8 @@ export default function Page() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         
         <p className = "mb-20 mt-20 text-5xl">you are on the software page</p>
-        <p className = "mb-20 mt-20 text-5xl">check back soon</p>
+        <p className = "mb-20 mt-20 text-5xl">check back soon lol</p>
+        
       </main>
       
     </div>
