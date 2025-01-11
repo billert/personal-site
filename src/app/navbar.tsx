@@ -34,7 +34,7 @@ export default function Navbar() {
                 {/*<p className = "">Path: {pathname}</p>*/}
                 
             </div>
-            <div className = "flex flew-row gap-1">
+            <div className = "flex flex-row gap-1">
                 {socialList.map((item) => {
                     return <li key = {item.key} className = "list-none hidden md:flex">
                         <a href = {item.url}>
@@ -50,17 +50,28 @@ export default function Navbar() {
                 </Link>
             </div>
         </div>
-        <div className = {`${showMenu ? "translate-y-0" : "hidden translate-y-full"} bg-[#dddddda0] dark:bg-[#222222a0] backdrop-blur-md transition-all duration-500`}>
+        <div className = {`${showMenu ? "translate-y-0" : "hidden translate-y-full"} bg-[#dddddda0] dark:bg-[#222222a0] backdrop-blur-md transition-all duration-500 flex flex-col`}>
             <div className = "flex flex-col">
                 {pageList.map((item) => {
                     return <li key={item.key} className = "list-none md:hidden flex-row align-middle items-center justify-center">
                         <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
                             <div className = "flex flex-row items-center align-middle">
-                                <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2" : "transition-colors opacity-60 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60]"}>{item.displayName}</p>
+                                <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2 w-screen text-center" : "transition-colors opacity-60 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] w-screen text-center"}>{item.displayName}</p>
                             </div>
                         </Link>
                     </li>
                 })}
+                <div className = "flex flex-row gap-1 items-center justify-center mb-2 mt-2">
+                {socialList.map((item) => {
+                    return <li key = {item.key} className = "list-none flex">
+                        <a href = {item.url}>
+                            <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
+
+                            </Image>
+                        </a>
+                    </li>
+                })}
+                </div>
             </div>
         </div>
     </header>
