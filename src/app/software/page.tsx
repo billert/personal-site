@@ -6,7 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Link from "next/link";
 
 
-const projects = [{key: 0, name: "Magic Menu", desc: "A menu checker for Texas A&M Dining Halls that just works", images: ["/maroon menu 1.png", "/maroon menu 2.png", "/maroon menu 3.png", "/maroon menu 4.png", "/maroon menu 5.png"]}]
+const projects = [{key: 0, name: "Magical Menu", desc: "A menu checker for Texas A&M Dining Halls that just works", images: ["/maroon menu 1.png", "/maroon menu 2.png", "/maroon menu 3.png", "/maroon menu 4.png", "/maroon menu 5.png"]}]
 
 export default function Page() {
 const [emblaRef] = useEmblaCarousel({dragFree: true})
@@ -18,7 +18,7 @@ const [emblaRef] = useEmblaCarousel({dragFree: true})
         <div>
             <div className = "bg-[#dddddd] dark:bg-[#222222] flex flex-col justify-start w-[600] p-2">
               <div className = "flex flex-row justify-between align-middle">
-                <p className = "font-bold text-6xl">Magic Menu</p>
+                <p className = "font-bold text-6xl">Magical Menu</p>
                 <Link href = "https://magicmenu.billert.dev">
                   <Image src = {"/arrow-right.svg"} alt = "Go Button" height = {50} width = {50} className = "dark:invert"></Image>
                 </Link>
