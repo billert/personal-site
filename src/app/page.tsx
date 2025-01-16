@@ -7,7 +7,7 @@ export default function Home() {
       
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <p className = "mb-20 mt-20 text-5xl font-bold">The personal website of Owen Cai (Under Construction)</p>
-        
+        <a href = "/owen cai resume m2.pdf">Click for current résumé</a>
       </main>
          </div>
     </div>
