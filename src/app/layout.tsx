@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "billert.dev",
+  title: "Owen Cai Portfolio",
   description: "Personal Website of Owen Cai",
 };
 
