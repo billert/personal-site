@@ -6,12 +6,12 @@ import Image from "next/image";
 import { useState } from "react"
 
 const pageList = [{key: 0, name: "software", displayName: "Software"}, {key:1, name: "art", displayName: "Art"}, {key:2, name: "about-me", displayName: "About Me"}]
-const socialList = [{key: 0, url: "https://codeforces.com/profile/billert12", logo: "/codeforces.svg", name: "Codeforces"}, {key: 1, url: "https://github.com/billert", logo: "/github.svg", name: "Github"}]
+const socialList = [{key: 2, url: "https://www.instagram.com/owenbcai/", logo: "/Instagram_Glyph_Black.svg", name: "Instagram"}, {key: 0, url: "https://codeforces.com/profile/billert12", logo: "/codeforces.svg", name: "Codeforces"}, {key: 1, url: "https://github.com/billert", logo: "/github.svg", name: "Github"}, {key: 3, url: "https://www.linkedin.com/in/owenbcai/", logo: "/InBug-Black.png", name: "LinkedIn"}]
 
 export default function Navbar() {
     const pathname = usePathname();
     const [showMenu, setShowMenu] = useState(false);
-    return <header className = "z-10 sticky top-0">
+    return <header className = "z-20 fixed w-screen">
         <div className = "pl-1 pr-1 flex flex-row items-center justify-between align-middle h-12 w-full bg-[repeating-linear-gradient(45deg,var(--tw-gradient-stops))] from-[#efefef] dark:from-[#090909] from-[length:0_20px] to-[#f5f5f5] dark:to-[#161616] to-[length:20px_40px]">
             <div className = "flex flex-row gap-1">
 
@@ -37,7 +37,7 @@ export default function Navbar() {
             <div className = "flex flex-row gap-1">
                 {socialList.map((item) => {
                     return <li key = {item.key} className = "list-none hidden md:flex">
-                        <a href = {item.url}>
+                        <a href = {item.url} className = "transition-all hover:opacity-70 active:opacity-40">
                             <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
 
                             </Image>
@@ -64,7 +64,7 @@ export default function Navbar() {
                 <div className = "flex flex-row gap-1 items-center justify-center mb-2 mt-2">
                 {socialList.map((item) => {
                     return <li key = {item.key} className = "list-none flex">
-                        <a href = {item.url}>
+                        <a href = {item.url} className="transition-all hover:opacity-70 active:opacity-40">
                             <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
 
                             </Image>

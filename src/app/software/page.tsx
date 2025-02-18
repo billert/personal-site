@@ -13,7 +13,7 @@ export default function Page() {
 const [emblaRef] = useEmblaCarousel({dragFree: true})
 const [emblaRef2] = useEmblaCarousel({dragFree: true})
   return (
-    <div className = "">
+    <div className = "pt-5">
     <div className="z-0 grid grid-rows-[20px_1fr_20px] items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
       
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
