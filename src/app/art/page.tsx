@@ -1,11 +1,8 @@
 "use client"
-import Image from "next/image"
-import { motion, useMotionValue } from "motion/react"
+import { motion } from "motion/react"
 import { useState } from "react"
 
 export default function Page() {
-  const x = useMotionValue(0)
-  const opacity = useMotionValue(1)
   const [arrow_state, set_arrow_state] = useState<"normal" | "prime" | "activate" | "hover">("normal");
   return (
     <div className = "">
