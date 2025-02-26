@@ -1,6 +1,7 @@
 'use client'
 
-import Link from "next/link";
+import { motion } from "motion/react"
+import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation"
 import Image from "next/image";
 import { useState } from "react"
@@ -25,9 +26,9 @@ export default function Navbar() {
                 {pageList.map((item) => {
                     return <li key={item.key} className = "list-none hidden md:flex flex-row align-middle items-center justify-center">
                         <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
-                            <div className = "transition ease-in-out flex flex-row">
-                                <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2" : "transition-colors opacity-70 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60]"}>{item.displayName}</p>
-                            </div>
+                            <motion.div layout className = {"transition ease-in-out flex flex-row "}>
+                                <p className = {pathname.includes("/"+item.name) ? "transition-all opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2  active:scale-90 active:bg-[#00000060] dark:active:bg-[#ffffff60]" : "transition-all opacity-70 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] hover:scale-105 active:scale-90"}>{item.displayName}</p>
+                            </motion.div>
                         </Link>
                     </li>
                 })}
@@ -37,11 +38,11 @@ export default function Navbar() {
             <div className = "flex flex-row gap-1">
                 {socialList.map((item) => {
                     return <li key = {item.key} className = "list-none hidden md:flex">
-                        <a href = {item.url} className = "transition-all hover:opacity-70 active:opacity-40">
+                        <Link href = {item.url} className = "transition-all hover:opacity-70 active:opacity-40">
                             <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
 
                             </Image>
-                        </a>
+                        </Link>
                     </li>
                 })}
                 <Link href = "javascript:;" className = "flex flex-row items-center align-middle md:hidden gap-1" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}}>
@@ -64,11 +65,11 @@ export default function Navbar() {
                 <div className = "flex flex-row gap-1 items-center justify-center mb-2 mt-2">
                 {socialList.map((item) => {
                     return <li key = {item.key} className = "list-none flex">
-                        <a href = {item.url} className="transition-all hover:opacity-70 active:opacity-40">
+                        <Link href = {item.url} className="transition-all hover:opacity-70 active:opacity-40">
                             <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
 
                             </Image>
-                        </a>
+                        </Link>
                     </li>
                 })}
                 </div>
