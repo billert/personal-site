@@ -45,10 +45,10 @@ export default function Navbar() {
                         </Link>
                     </li>
                 })}
-                <Link href = "javascript:;" className = "flex flex-row items-center align-middle md:hidden gap-1" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}}>
+                <a href = "javascript:;" className = "flex flex-row items-center align-middle md:hidden gap-1" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}}>
                     Menu
                     
-                </Link>
+                </a>
             </div>
         </div>
         <div className = {`${showMenu ? "translate-y-0" : "hidden translate-y-full"} bg-[#dddddda0] dark:bg-[#222222a0] backdrop-blur-md transition-all duration-500 flex flex-col`}>
@@ -65,11 +65,11 @@ export default function Navbar() {
                 <div className = "flex flex-row gap-1 items-center justify-center mb-2 mt-2">
                 {socialList.map((item) => {
                     return <li key = {item.key} className = "list-none flex">
-                        <Link href = {item.url} className="transition-all hover:opacity-70 active:opacity-40">
+                        <a href = {item.url} className="transition-all hover:opacity-70 active:opacity-40">
                             <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
 
                             </Image>
-                        </Link>
+                        </a>
                     </li>
                 })}
                 </div>

@@ -21,7 +21,7 @@ export default function Page() {
         
         <p className = "text-5xl">Hi, I&apos;m <span className = "font-bold">Owen Cai</span>,</p>
         <p className = "text-2xl opacity-70">Student at Texas A&M</p>
-        <motion.a layout href="./owen cai resume m5.pdf" download="Owen Cai Resume.pdf" className = "p-4 w-[525] flex flex-row justify-between items-center gap-2 border-2 border-black dark:border-white" onMouseEnter={() => set_arrow_state("hover")} onMouseLeave={() => set_arrow_state("normal")} onMouseDown = {() => set_arrow_state("prime")} onMouseUp = {() => {set_arrow_state("activate"); setResumeButton("Thank you!")}}>
+        <motion.a layout href="./owen cai resume m6.pdf" download="Owen Cai Resume.pdf" className = "p-4 w-[525] flex flex-row justify-between items-center gap-2 border-2 border-black dark:border-white" onMouseEnter={() => set_arrow_state("hover")} onMouseLeave={() => set_arrow_state("normal")} onMouseDown = {() => set_arrow_state("prime")} onMouseUp = {() => {set_arrow_state("activate"); setResumeButton("Thank you!")}}>
           <p className = "text-5xl">{resumeButton}</p>
           <motion.img src="/arrow-right.svg" alt="Right arrow of Go" style={{rotate:90}} height={60} width={60} animate={arrow_state} variants={{
             normal: {y: 0, opacity:0.7},
