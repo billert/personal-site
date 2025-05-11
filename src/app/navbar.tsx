@@ -24,12 +24,12 @@ export default function Navbar() {
             <div className = "flex flex-row gap-1">
                 <div className="flex flex-row">
                     <Link href = "/" className = "transition-all flex flex-row items-center align-middle p-1 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60]">
-                        <motion.div className = "transition ease-in-out flex flex-row" animate={{y:-50, opacity:0, transition:{ease: "easeOut", duration:0.5,delay:2}}}>
+                        <motion.div className = "transition ease-in-out flex flex-row" animate={{y:-50, opacity:0, transition:{ease: "easeOut", duration:0.5,delay:1}}}>
                             <p className = "text-3xl mr-0 font-bold">billert</p>
                             <p className = "text-3xl ml-0 font-bold text-transparent text-stroke-black dark:text-stroke-white text-stroke-1">.dev</p>
 
                         </motion.div>
-                        <motion.div style={{y:-50, opacity:0}} className = "absolute transition ease-in-out flex flex-row z-10" animate={{y:0, opacity:1}} transition={{ease: "linear", duration:0.5, delay:2.15}}>
+                        <motion.div style={{y:0, opacity:0}} className = "absolute transition ease-in-out flex flex-row z-10" animate={{y:0, opacity:1}} transition={{ease: "linear", duration:0.5, delay:1.15}}>
                             <p className = "text-3xl mr-1 font-bold">Owen</p>
                             <p className = "text-3xl ml-0 font-bold text-transparent text-stroke-black dark:text-stroke-white text-stroke-1">Cai</p>
 
@@ -37,26 +37,26 @@ export default function Navbar() {
                     </Link>
                 </div>
                 {pageList.map((item) => {
-                    return <li key={item.key} className = "list-none hidden md:flex flex-row align-middle items-center justify-center">
+                    return <motion.li key={item.key} style={{opacity:0, x:-20}} className = "list-none hidden md:flex flex-row align-middle items-center justify-center" animate={{opacity:1, x:0}} transition={{delay: 0.3+0.1*item.key}}>
                         <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
                             <motion.div layout className = {"transition ease-in-out flex flex-row "}>
                                 <p className = {pathname.includes("/"+item.name) ? "transition-all opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2  active:scale-90 active:bg-[#00000060] dark:active:bg-[#ffffff60]" : "transition-all opacity-70 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] hover:scale-105 active:scale-90"}>{item.displayName}</p>
                             </motion.div>
                         </Link>
-                    </li>
+                    </motion.li>
                 })}
                 {/*<p className = "">Path: {pathname}</p>*/}
                 
             </div>
             <div className = "flex flex-row gap-1">
                 {socialList.map((item) => {
-                    return <li key = {item.key} className = "list-none hidden md:flex">
+                    return <motion.li key = {item.key} style={{opacity:0, x:10}} className = "list-none hidden md:flex" animate={{opacity:1, x:0}} transition={{delay: 1.5+0.2*item.key}}>
                         <Link href = {item.url} className = "transition-all hover:opacity-70 active:opacity-40">
                             <Image aria-hidden src={item.logo} alt={item.name} width={32} height={32} className="dark:invert">
 
                             </Image>
                         </Link>
-                    </li>
+                    </motion.li>
                 })}
                 <motion.a href = "javascript:;" className = "flex flex-row items-center align-middle md:hidden gap-1" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}} animate={menu_state}
                           onMouseEnter={() => set_menu_state("hover")} onMouseLeave={() => {if (showMenu) {set_menu_state("open")} else set_menu_state("closed")}} onMouseDown = {() => set_menu_state("press")} onMouseUp = {() => {set_menu_state("hover")}}
