@@ -25,7 +25,7 @@ export default function Page() {
 
         </div>
         <div>
-          <motion.p className = "text-2xl mb-0" style={{opacity:0}} animate={{opacity:0.7}} transition={{delay:2.5}}>I&apos;m also a...</motion.p>
+          <motion.p className = "text-2xl mb-0" style={{opacity:0}} animate={{opacity:0.7}} transition={{delay:2.5}}>I&apos;ve also been a...</motion.p>
           <motion.ul className = "m-0" >
           {combined_list.map((item, key) => {
                       return <motion.li key={key} className = "list-none m-0 p-0 gap-0" style={{opacity:0, x:-10}} animate={{opacity:1,x:0}} transition={{delay:3+key*0.6, duration:0.5}}>
