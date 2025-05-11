@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "motion/react"
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { usePathname } from "next/navigation"
 import Image from "next/image";
 import { useState } from "react"
@@ -22,14 +22,20 @@ export default function Navbar() {
     return <header className = "z-20 fixed w-screen">
         <motion.div style={{zIndex: 30}} className = "pl-1 pr-1 flex flex-row items-center justify-between align-middle h-12 w-full bg-[repeating-linear-gradient(45deg,var(--tw-gradient-stops))] from-[#efefef] dark:from-[#090909] from-[length:0_20px] to-[#f5f5f5] dark:to-[#161616] to-[length:20px_40px]">
             <div className = "flex flex-row gap-1">
+                <div className="flex flex-row">
+                    <Link href = "/" className = "transition-all flex flex-row items-center align-middle p-1 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60]">
+                        <motion.div className = "transition ease-in-out flex flex-row" animate={{y:-50, opacity:0, transition:{ease: "easeOut", duration:0.5,delay:2}}}>
+                            <p className = "text-3xl mr-0 font-bold">billert</p>
+                            <p className = "text-3xl ml-0 font-bold text-transparent text-stroke-black dark:text-stroke-white text-stroke-1">.dev</p>
 
-                <Link href = "/" className = "transition-all flex flex-row items-center align-middle p-1 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60]">
-                    <div className = "transition ease-in-out flex flex-row">
-                        <p className = "text-3xl mr-0 font-bold">billert</p>
-                        <p className = "text-3xl ml-0 font-bold text-transparent text-stroke-black dark:text-stroke-white text-stroke-1">.dev</p>
-                    
-                    </div>
-                </Link>
+                        </motion.div>
+                        <motion.div style={{y:-50, opacity:0}} className = "absolute transition ease-in-out flex flex-row z-10" animate={{y:0, opacity:1}} transition={{ease: "linear", duration:0.5, delay:2.15}}>
+                            <p className = "text-3xl mr-1 font-bold">Owen</p>
+                            <p className = "text-3xl ml-0 font-bold text-transparent text-stroke-black dark:text-stroke-white text-stroke-1">Cai</p>
+
+                        </motion.div>
+                    </Link>
+                </div>
                 {pageList.map((item) => {
                     return <li key={item.key} className = "list-none hidden md:flex flex-row align-middle items-center justify-center">
                         <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
@@ -64,7 +70,7 @@ export default function Navbar() {
                 </motion.a>
             </div>
         </motion.div>
-        <motion.div style = {{zIndex: 10}} className = {`${showMenu ? "" : ""} bg-[#dddddda0] dark:bg-[#222222a0] backdrop-blur-md transition-all duration-500 flex flex-col`} animate={menu_item_state} variants={{
+        <motion.div style = {{zIndex: 10, y:-270}} className = {`${showMenu ? "" : ""} bg-[#dddddda0] dark:bg-[#222222a0] backdrop-blur-md transition-all duration-500 flex flex-col`} animate={menu_item_state} variants={{
             closed: {y: -270, scaleY:1, opacity:1, transition: { ease: ['linear'], duration: 0 }},
             open: {y: 0, scaleY:1, opacity:1, transition: { ease: ['linear'], duration: 0 }},
         }}>
@@ -72,7 +78,7 @@ export default function Navbar() {
                 <motion.ul>
                 {pageList.map((item) => {
                     return <motion.li key={item.key} className = "list-none md:hidden flex-row align-middle items-center justify-center" animate={menu_item_state} variants = {{
-                        closed: {x: 0, scale:0.5, opacity:0.3},
+                        closed: {x: 0, scale:0.5, opacity:0.0},
                         open: {x: 0, scale:1, opacity:1, transition: {delay: 0.2+item.key*0.08}},
                     }}>
                         <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
