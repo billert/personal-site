@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ViewTransitions } from 'next-view-transitions'
+import { Analytics } from "@vercel/analytics/next"
 
 import Navbar from "./navbar";
 
@@ -35,7 +36,7 @@ export default function RootLayout({
           
             <Navbar/>
             {children}
-          
+            <Analytics />
         </body>
       </html>
     </ViewTransitions>
