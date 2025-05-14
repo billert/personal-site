@@ -95,16 +95,16 @@ export default function Navbar() {
                     </motion.li>
                 })}
                 <motion.a href = "javascript:;" className = "transition-all flex flex-row items-center align-middle md:hidden gap-1 active:scale-90 active:opacity-80" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}}>
-                    <div className="border-2 flex flex-row items-center pl-2 pr-3 pt-1 pb-1 rounded-md gap-3">
+                    <div className="border-2 border-[#000000] dark:border-[#FFFFFF] border-opacity-50 dark:border-opacity-50 flex flex-row items-center pl-2 pr-3 pt-1 pb-1 rounded-md gap-3">
                         <p className="text-md">Menu</p>
                         <div className="flex items-center justify-center p-2">
-                            <motion.div className="flex items-center justify-center" animate={menu_item_state} transition={{ type: "spring", bounce: 0, duration:0.4 }} variants={{
+                            <motion.div style={{opacity:0}} className="flex items-center justify-center" animate={menu_item_state} transition={{ type: "spring", bounce: 0, duration:0.4 }} variants={{
                                 closed: {opacity:0, rotate:-45},
                                 open: {opacity:1}
                             }}>
                                 <XIcon className="absolute" size={30} />
                             </motion.div>
-                            <motion.div className="flex items-center justify-center" animate={menu_item_state} transition={{ type: "spring", bounce: 0, duration:0.4 }} variants={{
+                            <motion.div style={{opacity:1}} className="flex items-center justify-center" animate={menu_item_state} transition={{ type: "spring", bounce: 0, duration:0.4 }} variants={{
                                 closed: {opacity:1},
                                 open: {opacity:0, rotate:45}
                             }}>
