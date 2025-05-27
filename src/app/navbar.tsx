@@ -34,7 +34,7 @@ export default function Navbar() {
                         }}>
                             <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
                                 <div className = "flex flex-row items-center align-middle">
-                                    <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2 w-full text-center" : "transition-colors opacity-60 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] w-full text-center"}>{item.displayName}</p>
+                                    <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2 w-screen text-center" : "transition-colors opacity-60 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] w-screen text-center"}>{item.displayName}</p>
                                 </div>
                             </Link>
                         </motion.li>
@@ -94,7 +94,7 @@ export default function Navbar() {
                         </Link>
                     </motion.li>
                 })}
-                <motion.a href = "javascript:;" className = "transition-all flex flex-row items-center align-middle md:hidden gap-1 active:scale-90 active:opacity-80" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}}>
+                <motion.a className = "cursor-pointer transition-all flex flex-row items-center align-middle md:hidden gap-1 active:scale-90 active:opacity-80" suppressHydrationWarning onClick = {() => {setShowMenu(!showMenu); return false;}}>
                     <div className="border-2 border-[#000000] dark:border-[#FFFFFF] border-opacity-50 dark:border-opacity-50 flex flex-row items-center pl-2 pr-3 pt-1 pb-1 rounded-md gap-3">
                         <p className="text-md">Menu</p>
                         <div className="flex items-center justify-center p-2">
