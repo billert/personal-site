@@ -17,7 +17,7 @@ const [emblaRef2] = useEmblaCarousel({dragFree: true})
     <div className="z-0 grid grid-rows-[20px_1fr_20px] items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
       
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className = "w-screen flex flex-row justify-center">
+        <div className = "w-full flex flex-row justify-center">
             <div className = "bg-[#dddddd] dark:bg-[#222222] flex flex-col justify-start max-w-[600] p-2">
               <div className = "flex flex-row justify-between align-middle">
                 <p className = "font-bold text-6xl">Magical Menu</p>
@@ -39,7 +39,7 @@ const [emblaRef2] = useEmblaCarousel({dragFree: true})
             </div>
 
         </div>
-        <div className = "w-screen flex flex-row justify-center">
+        <div className = "w-full flex flex-row justify-center">
             <div className = "bg-[#dddddd] dark:bg-[#222222] flex flex-col justify-start w-[600] p-2">
               <div className = "flex flex-row justify-between align-middle">
                 <p className = "font-bold text-6xl">billert bot</p>

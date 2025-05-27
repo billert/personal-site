@@ -19,7 +19,7 @@ export default function Navbar() {
         set_menu_item_state(a ? "open" : "closed"); // true left, false right
     }
     //const [menu_state, set_menu_state] = useState<"closed" | "open" | "press" | "hover">("closed");
-    return <header className = "z-20 fixed w-screen">
+    return <header className = "z-20 fixed w-full">
         <motion.div style = {{zIndex: 10, y:-270}} className = {`${showMenu ? "" : ""} bg-[#dddddda0] dark:bg-[#222222a0] backdrop-blur-md transition-all duration-500 flex flex-col absolute`} animate={menu_item_state} variants={{
             closed: {y: -270, scaleY:1, opacity:1, transition: { ease: ['linear'], duration: 0 }},
             open: {y: 0, scaleY:1, opacity:1, transition: { ease: ['linear'], duration: 0 }},
@@ -34,7 +34,7 @@ export default function Navbar() {
                         }}>
                             <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
                                 <div className = "flex flex-row items-center align-middle">
-                                    <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2 w-screen text-center" : "transition-colors opacity-60 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] w-screen text-center"}>{item.displayName}</p>
+                                    <p className = {pathname.includes("/"+item.name) ? "opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2 w-full text-center" : "transition-colors opacity-60 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] w-full text-center"}>{item.displayName}</p>
                                 </div>
                             </Link>
                         </motion.li>
