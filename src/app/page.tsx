@@ -34,7 +34,7 @@ export default function Page() {
                   })}
           </motion.ul>
         </div>
-        <motion.a layout href="./owen cai resume m8.pdf" download="Owen Cai Resume.pdf" style={{opacity:0, y:5}} animate={{opacity:1, y:0, transition:{delay: 4+combined_list.length*0.6, duration:1}}} className = "p-4 flex flex-row justify-between items-center gap-2 border-2 border-black dark:border-white" onMouseEnter={() => set_arrow_state("hover")} onMouseLeave={() => set_arrow_state("normal")} onMouseDown = {() => set_arrow_state("prime")} onMouseUp = {() => {set_arrow_state("activate"); setResumeButton("Thank you!")}}>
+        <motion.a layout href="./owen cai resume m13.pdf" download="Owen Cai Resume.pdf" style={{opacity:0, y:5}} animate={{opacity:1, y:0, transition:{delay: 4+combined_list.length*0.6, duration:1}}} className = "p-4 flex flex-row justify-between items-center gap-2 border-2 border-black dark:border-white" onMouseEnter={() => set_arrow_state("hover")} onMouseLeave={() => set_arrow_state("normal")} onMouseDown = {() => set_arrow_state("prime")} onMouseUp = {() => {set_arrow_state("activate"); setResumeButton("Thank you!")}}>
           <p className = "text-3xl">{resumeButton}</p>
           <motion.img src="/arrow-right.svg" alt="Right arrow of Go" style={{rotate:90}} height={45} width={45} animate={arrow_state} variants={{
             normal: {y: 0, opacity:0.7},
