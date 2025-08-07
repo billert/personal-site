@@ -75,14 +75,15 @@ export default function Navbar() {
                 {pageList.map((item) => {
                     return <motion.li key={item.key} style={{opacity:0, x:-20}} className = "list-none hidden md:flex flex-row align-middle items-center justify-center" animate={{opacity:1, x:0}} transition={{delay: 0.3+0.1*item.key}}>
                         <Link href = {"/"+item.name} onClick = {() => {setShowMenu(false)}} className= "flex flex-row align-middle items-center justify-center">
-                            <motion.div layout className = {"transition ease-in-out flex flex-row "}>
+                            <motion.div className = {"transition ease-in-out flex flex-row "}>
                                 <p className = {pathname.includes("/"+item.name) ? "transition-all opacity-100  bg-[#00000020] dark:bg-[#ffffff30] p-2  active:scale-90 active:bg-[#00000060] dark:active:bg-[#ffffff60]" : "transition-all opacity-70 p-2 hover:bg-[#00000010] dark:hover:bg-[#ffffff10] active:bg-[#00000060] dark:active:bg-[#ffffff60] hover:scale-105 active:scale-90"}>{item.displayName}</p>
                             </motion.div>
                         </Link>
                     </motion.li>
+
                 })}
                 {/*<p className = "">Path: {pathname}</p>*/}
-                
+
             </div>
             <div className = "flex flex-row gap-1">
                 {socialList.map((item) => {
