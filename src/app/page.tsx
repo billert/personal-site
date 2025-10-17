@@ -16,7 +16,6 @@ export default function Page() {
   return (
     <div className = "">
     <div className="z-0 grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div>
           <p className = "text-5xl"><motion.span style={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4, delay:0}}>Hi,</motion.span><motion.span style={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4, delay:0.4}}> I&apos;m </motion.span><motion.span className = "font-bold" style={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4, delay:0.6}}>Owen Cai</motion.span><motion.span style={{opacity:0}} animate={{opacity:1}} transition={{duration:0.4, delay:0.8}}>,</motion.span></p>
