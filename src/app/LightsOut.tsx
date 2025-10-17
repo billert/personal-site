@@ -17,10 +17,31 @@ function clickBoard(in_board: boolean[][], row: number, col: number) {
     return board
 }
 
+function clickBoardModify(board: boolean[][], row: number, col: number) {
+    const neighbors = [[0, 0], [0, 1], [1, 0], [0, -1], [-1, 0]]
+    neighbors.forEach((neighbor) => {
+        const c_row = row + neighbor[0]
+        const c_col = col + neighbor[1]
+        if (c_col >= 0 && c_row >= 0 && c_row < board.length && c_col < board[0].length) {
+            board[c_row][c_col] = !board[c_row][c_col]
+        }
+    })
+    console.log("finish click")
+    // update_state(board)
+}
+
 function resetBoard(rows: number, cols: number) {
-    return Array.from({ length: rows }, () => (
-        Array.from({ length: cols }, () => (Math.random() < 0.5))
+    const board = Array.from({ length: rows }, () => (
+        Array.from({ length: cols }, () => false)
     ))
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board[i].length; j++) {
+            if (Math.random() < 0.5) {
+                clickBoardModify(board, i, j)
+            }
+        }
+    }
+    return board
 }
 
 function safeDec(num: number) {
@@ -41,7 +62,7 @@ export default function LightsOut() {
     const [rows, setRows] = useState(6)
     const [cols, setCols] = useState(6)
     const [board, setBoard] = useState<boolean[][]>(Array.from({ length: rows }, () => (
-        Array.from({ length: cols }, () => (Math.random() < 0.5))
+        Array.from({ length: cols }, () => ( false ))
     )));
     // for (let i = 0; i < rows; i++) {
     //     start_board.push([]);
@@ -67,13 +88,13 @@ export default function LightsOut() {
                 Regenerate
             </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1">
             {board.map((row, i) => (
                 <div className={"list-none"} key={i}>
-                    <div className="flex flex-row gap-2">
+                    <div className="flex flex-row gap-1">
                         {row.map((cell, j) => (
-                            <div className="w-7 border-2 text-center cursor-pointer" onClick={() => {setBoard(clickBoard(board, i, j))}} key={j}>
-                                <p className={cell ? "bg-[#00000090] dark:bg-[#ffffff90]" : ""}>{cell ? "1" : "0"}</p>
+                            <div className="transition-all w-7 border-2 text-center cursor-pointer" onClick={() => {setBoard(clickBoard(board, i, j))}} key={j}>
+                                <p className={cell ? "transition-all bg-[#00000090] dark:bg-[#ffffff90]" : "transition-all"}>{cell ? "1" : "0"}</p>
                             </div>
                         ))}
                     </div>
