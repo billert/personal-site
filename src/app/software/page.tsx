@@ -4,6 +4,8 @@ import React from 'react'
 import Image from "next/image"
 import useEmblaCarousel from 'embla-carousel-react'
 import Link from "next/link";
+import { useState } from "react";
+import Toggle from "@/app/Toggle";
 
 
 const projects = [{key: 0, name: "Magical Menu", desc: "A menu checker for Texas A&M Dining Halls that just works", images: ["/maroon menu 1.png", "/maroon menu 2.png", "/maroon menu 3.png", "/maroon menu 4.png", "/maroon menu 5.png"]}]
@@ -12,6 +14,7 @@ const billertbot_images = ["/billert bot 1.png", "/billert bot 2.png", "/billert
 export default function Page() {
 const [emblaRef] = useEmblaCarousel({dragFree: true})
 const [emblaRef2] = useEmblaCarousel({dragFree: true})
+    const [showExtraProjects, setShowExtraProjects] = useState(false)
   return (
     <div className = "pt-10">
     <div className="z-0 grid grid-rows-[20px_1fr_20px] items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
@@ -61,10 +64,37 @@ const [emblaRef2] = useEmblaCarousel({dragFree: true})
             </div>
 
         </div>
-        
+
+
+          <div className="flex flex-col justify-center">
+              <div className = "w-full flex flex-row justify-start gap-2 items-center">
+                  <Toggle onToggle={() => setShowExtraProjects(!showExtraProjects)} isOn={showExtraProjects}/>
+                  <p className="text-lg">Show Extra Projects</p>
+              </div>
+
+
+          </div>
+          {showExtraProjects && (
+              <div>
+                  <p className="text-2xl font-bold">Extra Projects</p>
+                  <p className="text-md opacity-60">that couldn&#39;t fit on my resume due to lack of space</p>
+                  <div className="flex flex-col">
+                      <p>Actual project cards coming soon</p>
+                      <ul>
+                          <a href={"https://calendar.applyingto.college"} className="underline">A2C Calendar</a>
+                          <p>Discord Spam Detection Bot</p>
+                          <p>Learning Management System (JPMC Code For Good Project)</p>
+                      </ul>
+                  </div>
+              </div>
+          )}
       </main>
-      
+
     </div>
+        <div className="flex flex-col justify-center">
+
+
+        </div>
     </div>
   );
 

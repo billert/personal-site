@@ -62,7 +62,7 @@ export default function LightsOut() {
     const [rows, setRows] = useState(6)
     const [cols, setCols] = useState(6)
     const [board, setBoard] = useState<boolean[][]>(Array.from({ length: rows }, () => (
-        Array.from({ length: cols }, () => ( false ))
+        Array.from({ length: cols }, () => false)
     )));
     // for (let i = 0; i < rows; i++) {
     //     start_board.push([]);
