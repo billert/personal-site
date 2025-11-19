@@ -15,9 +15,9 @@ export default function Toggle({ isOn, onToggle }: ToggleProps) {
     // }
     // setSt("abc")
     return <div>
-        <motion.div onClick={onToggle} className={"group cursor-pointer transition-all w-[60] rounded-full p-1 flex active:bg-[#4b67b5] "+(!isOn ? "justify-start bg-[#6E6E6E]" : "justify-end bg-[#2760FB]")}>
+        <motion.div style={{width: 60}} onClick={onToggle} className={"group cursor-pointer transition-all rounded-full p-1 flex active:bg-[#4b67b5] "+(!isOn ? "justify-start bg-[#6E6E6E]" : "justify-end bg-[#2760FB]")}>
             <motion.div layout>
-                <div className="transition-all w-[35] h-[20] bg-white rounded-full group-active:scale-95 group-active:opacity-90 group-active:ml-[5] group-active:mr-[5]">
+                <div style={{width: 35, height: 20}} className="transition-all bg-white rounded-full group-active:scale-95 group-active:opacity-90 group-active:ml-[5] group-active:mr-[5]">
 
                 </div>
             </motion.div>
