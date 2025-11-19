@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 interface ToggleProps {
     isOn: boolean;
-    onToggle() : void; // A function that returns nothing
+    onToggle() : void;
 }
 
 export default function Toggle({ isOn, onToggle }: ToggleProps) {
