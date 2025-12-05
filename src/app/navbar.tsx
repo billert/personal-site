@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState } from "react"
 import {ThreeBarsIcon, XIcon} from '@primer/octicons-react'
 
-const pageList = [{key: 0, name: "software", displayName: "Software"}, {key:1, name: "art", displayName: "Art"}, {key:2, name: "about-me", displayName: "About Me"}, {key:3, name:"honors-eportfolio", displayName: "ePortfolio"} , {key:4, name:"game", displayName: "Game"}]
+const pageList = [{key: 0, name: "software", displayName: "Software"}, {key:1, name: "art", displayName: "Art"}, {key:2, name:"honors-eportfolio", displayName: "ePortfolio"} , {key:3, name:"game", displayName: "Game"}]
 const socialList = [{key: 0, url: "https://www.instagram.com/owenbcai/", logo: "/Instagram_Glyph_Black.svg", name: "Instagram"}, {key: 1, url: "https://codeforces.com/profile/billert12", logo: "/codeforces.svg", name: "Codeforces"}, {key: 2, url: "https://github.com/billert", logo: "/github.svg", name: "Github"}, {key: 3, url: "https://www.linkedin.com/in/owenbcai/", logo: "/InBug-Black.png", name: "LinkedIn"}]
 
 export default function Navbar() {
